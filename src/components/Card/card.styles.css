@@ -1,0 +1,19 @@
+.card {
+    text-align: center;
+    background-color: aquamarine;
+    display: inline-block;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-width: .25rem;
+    box-shadow: 4px 4px 8px 0px rgba( 0, 0, 0, 0.2 );
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+
+.card:hover,
+.card:focus {
+    transform: scale(1.05);
+}

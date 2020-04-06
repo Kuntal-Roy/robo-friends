@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card/card.component';
+import { robots } from './data/robots';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Card id={robots[0].id} name={robots[0].name} email={robots[0].email} />
+        <Card id={robots[1].id} name={robots[1].name} email={robots[1].email} />
+        <Card id={robots[2].id} name={robots[2].name} email={robots[2].email} />
+      </div>
+    );
+  }
 }
 
 export default App;
