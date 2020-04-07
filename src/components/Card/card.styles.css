@@ -1,4 +1,7 @@
 .card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
     text-align: center;
     background-color: aquamarine;
     display: inline-block;
