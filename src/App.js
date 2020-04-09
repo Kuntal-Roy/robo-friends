@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       robots: [],
       searchField: ''
-    }
+    };
   }
 
   componentDidMount() {
@@ -21,6 +21,18 @@ class App extends React.Component {
     }).then( users => {
       this.setState({ robots: users })
     });
+
+
+    var searchbar = document.querySelector('.search-box');
+    var searchStart = searchbar.offsetTop;
+
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+      var pos = searchStart - scrollTop;
+      if(pos<0)
+        pos=0;
+      searchbar.style.top = `${pos}px`;
+  };
   }
 
   onSearchChange = (event) => {
@@ -37,7 +49,7 @@ class App extends React.Component {
       <div className="App">
         <h1 id="page-header">RoboFriends</h1>
         <SearchBox searchChange={this.onSearchChange}/>
-        <CardList robots={filteredRobots} />
+          <CardList robots={filteredRobots} />
       </div>
     );
   }
