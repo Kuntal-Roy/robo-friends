@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import CardList from './components/Cardlist/cardlist.component';
 import SearchBox from './components/SearchBox/searchbox.component';
+import ErrorBoundary from './components/ErrorBoundary/errorBoundary.component';
 
 import './App.css';
 
@@ -49,7 +50,9 @@ class App extends React.Component {
       <div className="App">
         <h1 id="page-header">RoboFriends</h1>
         <SearchBox searchChange={this.onSearchChange}/>
+        <ErrorBoundary>
           <CardList robots={filteredRobots} />
+        </ErrorBoundary>
       </div>
     );
   }
