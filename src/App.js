@@ -25,6 +25,8 @@ class App extends React.Component {
 
 
     var searchbar = document.querySelector('.search-box');
+    var cardlist = document.querySelector('.card-list');
+    searchbar.style.top = `${cardlist.offsetTop}px`;
     var searchStart = searchbar.offsetTop;
 
     window.onscroll = function() {
@@ -33,7 +35,13 @@ class App extends React.Component {
       if(pos<0)
         pos=0;
       searchbar.style.top = `${pos}px`;
-  };
+    };
+
+    window.onresize = function() {
+      searchStart = cardlist.offsetTop;
+      if(searchbar.offsetTop)
+        searchbar.style.top = `${cardlist.offsetTop}px`;
+    };
   }
 
   onSearchChange = (event) => {
